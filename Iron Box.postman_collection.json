@@ -1,0 +1,594 @@
+{
+	"info": {
+		"_postman_id": "631daf5b-fbb4-4bd3-a0e8-7e7825a0b3a8",
+		"name": "Iron Box",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"adnan\",\r\n \"username\":\"khan\",\r\n \"usertype\":\"admin\",\r\n \"phone\":\"0300287857911\",\r\n \"email\":\"adnanmalik4847@gmail.com\",\r\n \"age\":\"22\",\r\n \"gender\":\"male\",\r\n\"is_trainer\":\"1\",\r\n\"is_trainee\":\"0\",\r\n \"height\":\"34\",\r\n \"weight\":\"55\",\r\n \"injury\":\"wedwd\",\r\n \"medicalBackground\":\"werwedsd\",\r\n \"familyMedicalBackground\":\"wefsdsf\",\r\n \"specializesIn\":\"sssd\",\r\n \"experience\":\"23\",\r\n \"calories_burn\":\"234\",\r\n \"imgUrl\":\"22\",\r\n \"isPremiumUser\":\"0\",\r\n \"description\":\"wedsdsdc sdsdfsdfssdsd sdsddf\",\r\n \"price\":\"234\",\r\n \"videoUrl\":\"https://asdasdbabsd.com\",\r\n \"specialisation_category\":\"232e\",\r\n \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/register_user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"register_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"email\":\"adnanmalik4847@gmail.com\",\r\n \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/forget_password?email=adnanmalik4837@gmail.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"forget_password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "adnanmalik4837@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/reset_password?token=cdfdbc5564446b6a9822cd8c4953f448671e275beba6a7bdd0d4e9ded4275008&email=adnanmalik4837@gmail.com&password=12345670&password_confirmation=12345670",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"reset_password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "cdfdbc5564446b6a9822cd8c4953f448671e275beba6a7bdd0d4e9ded4275008"
+								},
+								{
+									"key": "email",
+									"value": "adnanmalik4837@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "12345670"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345670"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workout Plans",
+			"item": [
+				{
+					"name": "Show Workout Plans",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"title\":\"sdfsf\",\r\n \"description\":\"werwevwe werwesdsdv fwefwef\",\r\n \"caution\":\"no\",\r\n \"price\":\"99\",\r\n \"trainer_id\":\"7\",\r\n \"cover_img\":\"hjj\",\r\n \"cover_video\":\"https://nnn\",\r\n \"difficulty_level\":\"easy\",\r\n \"duration\":\"77\",\r\n \"category\":\"gh\",\r\n \"muscle_type\":\"eesay\",\r\n \"version\":\"9.0\",\r\n \"whats_new\":\"ghjnk nm\",\r\n \"status\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/workout_plans",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"workout_plans"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food Library",
+			"item": [
+				{
+					"name": "Fetch Food Library",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/fetch_food_library?skip=1&take=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fetch_food_library"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "1"
+								},
+								{
+									"key": "take",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Custom Diet Plans",
+			"item": [
+				{
+					"name": "Store Diet Plans",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"title\":\"adsad\",\r\n \"description\":\"werwevwe werwesdsdv fwefwef\",\r\n \"difficulty_level\":\"easy\",\r\n \"duration\":\"234\",\r\n \"goal\":\"sdwd\",\r\n \"caution\":\"wee\",\r\n \"request_id\":\"1\",\r\n \"trainee_id\":\"23\",\r\n \"trainer_id\":\"77\",\r\n \"cover_image\":\"gh\",\r\n \"total_protein\":\"23\",\r\n \"total_fat\":\"9.0\",\r\n \"total_calories\":\"23\",\r\n \"total_carbohydrates\":\"03\",\r\n  \"protein_gain\":\"03\",\r\n   \"fat_gain\":\"03\",\r\n    \"calories_gain\":\"03\",\r\n     \"carbohydrates_gain\":\"03\",\r\n  \"version\":\"03\",\r\n   \"progress\":\"03\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/store_diet_plan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"store_diet_plan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Diet Plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"title\":\"adsadeessd123123123\",\r\n \"description\":\"werwevwe werwesdsdv fwefwef\",\r\n \"difficulty_level\":\"dfd\",\r\n \"duration\":\"234\",\r\n \"goal\":\"sdwd\",\r\n \"caution\":\"wee\",\r\n \"request_id\":\"1\",\r\n \"trainee_id\":\"23\",\r\n \"trainer_id\":\"77\",\r\n \"cover_image\":\"gh\",\r\n \"total_protein\":\"23\",\r\n \"total_fat\":\"9.0\",\r\n \"total_calories\":\"23\",\r\n \"total_carbohydrates\":\"03\",\r\n  \"protein_gain\":\"03\",\r\n   \"fat_gain\":\"03\",\r\n    \"calories_gain\":\"03\",\r\n     \"carbohydrates_gain\":\"03\",\r\n  \"version\":\"03\",\r\n   \"progress\":\"03\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/update_diet_plan/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"update_diet_plan",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Diet Plan Meal Dishes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"adsadeessd123123123\",\r\n \"meal_id\":\"1\",\r\n \"description\":\"asdasd asdasd\",\r\n \"weight\":\"234\",\r\n \"image\":\"sdwd\",\r\n \"protein\":\"2\",\r\n \"calories\":\"31\",\r\n \"fat\":\"23\",\r\n \"carbohydrates\":\"77\",\r\n \"caution\":\"gh\",\r\n \"status\":\"23\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/store_diet_plan_meal_dishes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"store_diet_plan_meal_dishes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Diet Plan Meal Dishes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\":\"adsadeessd123123123dfdfds\",\r\n \"meal_id\":\"1\",\r\n \"description\":\"asdasd asdasd\",\r\n \"weight\":\"234\",\r\n \"image\":\"sdwd\",\r\n \"protein\":\"2\",\r\n \"calories\":\"31\",\r\n \"fat\":\"23\",\r\n \"carbohydrates\":\"77\",\r\n \"caution\":\"gh\",\r\n \"status\":\"23\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/update_diet_plan_meal_dishes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"update_diet_plan_meal_dishes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plan Requests",
+			"item": [
+				{
+					"name": "Trainee Plan Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/api/get_trainee_plan_request/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"get_trainee_plan_request",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Request Plan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"trainer_id\":\"1\",\r\n \"trainee_id\":\"2\",\r\n \"status\":\"1\",\r\n \"price\":\"234\",\r\n \"created_date\":\"10-18-99\",\r\n \"category\":\"2\",\r\n \"payment_status\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/request_plan",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"request_plan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Logs",
+			"item": [
+				{
+					"name": "Store Diet Self Logs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "protein_gain",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "fat_gain",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "cal_gain",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "carbohydrates_gain",
+									"value": "234",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "sadad",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "asdasd asdasdas asdasdasd",
+									"type": "text"
+								},
+								{
+									"key": "caution",
+									"value": "asas",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "img_url",
+									"type": "file",
+									"src": "/D:/Important Things/catories images/Trainers.jpg"
+								},
+								{
+									"key": "created_date",
+									"value": "10-12-12",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "meal_time",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "created_by",
+									"value": "12-12-23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/store_diet_self_logs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"store_diet_self_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Diet Meal Logs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"meal_id\":\"1\",\r\n \"created_date\":\"120-12-21\",\r\n \"category_id\":\"2\",\r\n \"user_id\":\"2\",\r\n \"created_by\":\"2\",\r\n \"meal_time\":\"12to23\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/store_diet_meal_logs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"store_diet_meal_logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch User Logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{auth_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/fetch_user_logs/user_id=2/date=2021-11-15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fetch_user_logs",
+								"user_id=2",
+								"date=2021-11-15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Urls",
+			"item": [
+				{
+					"name": "Fetch Base Urls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/fetch_base_urls",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"fetch_base_urls"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "auth_token",
+			"value": ""
+		}
+	]
+}
